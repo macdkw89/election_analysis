@@ -9,11 +9,6 @@ os.chdir('D:/BC/repos/election_analysis')
 # 4. The total number of votes each candidate won
 # 5. The winner of the election based on popular vote
 
-import datetime as dt
-now = dt.datetime.now()
-print(now)
-import csv
-
 # Assign a variable for the file to load, and the path
 file_to_load = os.path.join('resources','election_results.csv')
 
@@ -23,9 +18,6 @@ with open(file_to_load) as election_data:
     # To do: perform analysis
     print(election_data)
 
-
-# Close the file.
-election_data.close()
 
 
 
