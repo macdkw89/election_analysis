@@ -1,5 +1,9 @@
 #Below changes my working directory to the appropriate repository
 import os
+import csv
+import datetime as dt
+now = dt.datetime.now()
+print(now)
 os.chdir('D:/BC/repos/election_analysis')
 
 # The data we need to retrieve
