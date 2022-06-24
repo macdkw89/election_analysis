@@ -1,9 +1,12 @@
+# Election Analysis Module for UT Data Bootcamp - Kevin MacDonald
+
 # Add our dependencies.
 import csv
 import os
 
 # Add a variable to load a file from a path.
 file_to_load = os.path.join("resources", "election_results.csv")
+
 # Add a variable to save the file to a path.
 file_to_save = os.path.join("analysis", "election_analysis.txt")
 
@@ -128,7 +131,7 @@ with open(file_to_save, "w") as txt_file:
         # Print each candidate's voter count and percentage to the terminal.
         print(candidate_results)
 
-        #  Save the candidate results to our text file.
+        # Save the candidate results to our text file.
         txt_file.write(candidate_results)
 
         # Determine winning vote count, winning percentage, and candidate.
