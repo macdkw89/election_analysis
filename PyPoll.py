@@ -1,16 +1,16 @@
 # Election Analysis Module for UT Data Bootcamp - Kevin MacDonald
-#Below changes my working directory to the appropriate repository --- !!!! Fixed - but keeping code here just in case
-#os.chdir('D:/BC/repos/election_analysis')
+# Below changes my working directory to the appropriate repository --- !!!! Fixed - but keeping code here just in case
+# os.chdir('D:/BC/repos/election_analysis')
 
-#Add dependencies
+# Add dependencies
 import os
 import csv
 import datetime as dt
 
 # Assign a variable for the file to load from a path
-file_to_load = os.path.join('resources','election_results.csv')
+file_to_load = os.path.join('resources', 'election_results.csv')
 # Assign a variable to save the file to a path
-file_to_save = os.path.join('analysis','election_analysis.txt')
+file_to_save = os.path.join('analysis', 'election_analysis.txt')
 
 # Initialize variables, lists, and dictionaries to be used
 total_votes = 0
@@ -53,7 +53,8 @@ with open(file_to_save, "w") as txt_file:
     for candidate_name in candidate_votes:
         votes = candidate_votes[candidate_name]
         vote_percentage = float(votes) / float(total_votes) * 100
-        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        candidate_results = (
+            f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
         print(candidate_results)
         txt_file.write(candidate_results)
 
@@ -69,10 +70,3 @@ with open(file_to_save, "w") as txt_file:
         f"-------------------------\n")
     print(winning_candidate_summary)
     txt_file.write(winning_candidate_summary)
-
-
-
-
-
-    
-
