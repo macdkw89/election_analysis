@@ -44,11 +44,15 @@ An image of the analysis text file output:
 ![analysis terminal](/resources/results_terminal.png)
 
 ## Election-Audit Summary
-This analysis using Python was a success! The process is completely automated and the script doesn't use any district specific information allowing us to use this script on a different district's tabulated votes and have equal success.
+This analysis using Python was a success! The process is completely automated and the script doesn't use any district specific information. This allows us to use this script on a different district's tabulated votes and have equal success, as long as the data source uses an identical format.
 
 However, if we wanted to use this script on a different type of election that uses different criteria, we would have to make some modifications. 
+
 ### Example 1
-Say we want to take this to the national level and use the Electoral College system. We would have to define a dictionary in python that contains each state's electoral votes.
+If we were to use this code to run a primary election, we would have to include variables for the different political parties involved. Voters in Colorado are usually affiliated with a major or minor political party, or they can vote as unaffiliated. When voting unaffiliated, they can vote across party lines in the primary election, this will undoubtedly change the format of tabulated votes. We would also need variables to state Republican and Democrat winners as well as non-party-affiliated positions such as mayor and city counsel. 
+
+### Example 2
+Say we want to take this to the national level and use the Electoral College system. We would start by running the code we already have for each precinct in each state, then create a new output that contains each of the nation's 176,933 precincts' total votes (as opposed to each individual vote) in rows along with the corresponding state. We would then tally the precinct totals of candidate votes in each state using a similar format to this module with for loops and conditional statements to arrive at the popular vote winner of each state. I would then define a dictionary in python that contains each state's electoral votes and award those votes to the correct candidate.
 ```
 state_electoral_votes = {
     "Alabama": 9,
@@ -57,5 +61,9 @@ state_electoral_votes = {
     "Arkansas": 6,
     ....
 }
+for candidate in candidate_list:
+    for state in state_list:
+        if candidate == winner:
+        
 ```
 
