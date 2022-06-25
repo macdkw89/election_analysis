@@ -52,18 +52,34 @@ However, if we wanted to use this script on a different type of election that us
 If we were to use this code to run a primary election, we would have to include variables for the different political parties involved. Voters in Colorado are usually affiliated with a major or minor political party, or they can vote as unaffiliated. When voting unaffiliated, they can vote across party lines in the primary election, this will undoubtedly change the format of tabulated votes. We would also need variables to state Republican and Democrat winners as well as non-party-affiliated positions such as mayor and city counsel. 
 
 ### Example 2
-Say we want to take this to the national level and use the Electoral College system. We would start by running the code we already have for each precinct in each state, then create a new output that contains each of the nation's 176,933 precincts' total votes (as opposed to each individual vote) in rows along with the corresponding state. We would then tally the precinct totals of candidate votes in each state using a similar format to this module with for loops and conditional statements to arrive at the popular vote winner of each state. I would then define a dictionary in python that contains each state's electoral votes and award those votes to the correct candidate.
+Say we want to take this to the national level and use the Electoral College system. We would start by running the code we already have for each precinct in each state, then create a new output that contains each of the nation's 176,933 precincts' total votes (as opposed to each individual vote) in rows along with the corresponding state. We would then tally the precinct totals of candidate votes in each state using a similar format to this module with for loops and conditional statements to arrive at the popular vote winner of each state. I would then define 2 dictionaries in python that contains each state's electoral votes, and each state's winners, and award those votes to the correct candidate.
+Example snippet of code:
 ```
+candidate_list = ["Bush", "Gore"]
+state_list = ['AL', 'AK', 'AZ', 'AR']
 state_electoral_votes = {
-    "Alabama": 9,
-    "Alaska": 3, 
-    "Arizona": 11,
-    "Arkansas": 6,
-    ....
+    "AL": 9,
+    "AK": 3, 
+    "AZ": 11,
+    "AR": 6,
 }
-for candidate in candidate_list:
-    for state in state_list:
-        if candidate == winner:
-        
+state_winners = {
+    'AL': 'Bush',
+    'AK': 'Gore',
+    'AZ': 'Gore',
+    'AR': 'Bush'
+}
+
+for c in candidate_list:
+    candidate_electoral_votes = 0
+    for s in state_list:
+        if state_winners[s] == c:
+            candidate_electoral_votes += state_electoral_votes[s]
+    print(f"{c}: {candidate_electoral_votes}")
+```
+This would return an outcome of:
+```
+Bush: 15
+Gore: 14
 ```
 
