@@ -3,7 +3,7 @@
 # Add our dependencies.
 import csv
 import os
-
+os.chdir('D:/BC/repos/election_analysis')
 # Add a variable to load a file from a path.
 file_to_load = os.path.join("resources", "election_results.csv")
 
@@ -150,3 +150,4 @@ with open(file_to_save, "w") as txt_file:
 
     # Save the winning candidate's name to the text file
     txt_file.write(winning_candidate_summary)
+
