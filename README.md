@@ -37,7 +37,11 @@ This analysis was to help Colorado Board of Elections employee, Tom, in an elect
 
 An image of the analysis text file output:
 
-![analysis](resouces/results_txt.png)
+![analysis text](/resources/results_txt.png)
+
+An image of the analysis text file output:
+
+![analysis terminal](/resources/results_terminal.png)
 
 ## Election-Audit Summary
 In a summary statement, provide a business proposal to the election commission on how this script can be used—with some modifications—for any election. Give at least two examples of how this script can be modified to be used for other elections.
