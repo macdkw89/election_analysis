@@ -44,4 +44,18 @@ An image of the analysis text file output:
 ![analysis terminal](/resources/results_terminal.png)
 
 ## Election-Audit Summary
-In a summary statement, provide a business proposal to the election commission on how this script can be used—with some modifications—for any election. Give at least two examples of how this script can be modified to be used for other elections.
+This analysis using Python was a success! The process is completely automated and the script doesn't use any district specific information allowing us to use this script on a different district's tabulated votes and have equal success.
+
+However, if we wanted to use this script on a different type of election that uses different criteria, we would have to make some modifications. 
+### Example 1
+Say we want to take this to the national level and use the Electoral College system. We would have to define a dictionary in python that contains each state's electoral votes.
+```
+state_electoral_votes = {
+    "Alabama": 9,
+    "Alaska": 3, 
+    "Arizona": 11,
+    "Arkansas": 6,
+    ....
+}
+```
+
